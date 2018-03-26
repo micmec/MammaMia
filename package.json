@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
     "events": "^1.1.1",
     "express": "^4.15.2",
     "history": "^2.0.1",
@@ -10,17 +12,24 @@
     "q": "^1.5.0",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
+    "react-redux": "^5.0.7",
     "react-router": "^2.8.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.1",
     "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "sweetalert": "^2.1.0",
     "sweetalert-react": "^0.4.11"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "server": "cd src/server node serve",
+    "client": "react-scripts start",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
   }
 }
