@@ -3,9 +3,15 @@ import React from 'react'
 class TextFieldGroup extends React.Component {
 
     render() {
+        const {isLast} = this.props;
+        let classDiv = "6u 12u$(mobile)";
+        if(isLast !== null && !isLast){
+            classDiv = "6u$ 12u$(mobile)"
+        }
         return (
-            <div className="6u 12u$(mobile)"><input required value={this.props.value}
+            <div className={classDiv} style={{'width':'100%'}}><input required value={this.props.value}
                                                     onChange={this.props.onChange} type={this.props.type}
+                                                    onBlur={this.props.checkUserExists}
                                                     className={this.props.classBox}
                                                     name={this.props.field}
                                                     placeholder={this.props.label}/>
@@ -24,7 +30,9 @@ TextFieldGroup.propTypes = {
     label: React.PropTypes.string.isRequired,
     error: React.PropTypes.string.isRequired,
     type: React.PropTypes.string.isRequired,
-    onChange: React.PropTypes.func.isRequired
+    onChange: React.PropTypes.func.isRequired,
+    checkUserExists: React.PropTypes.func.isRequired,
+    isLast: React.PropTypes.bool.isRequired
 };
 
 TextFieldGroup.defaultProps = {

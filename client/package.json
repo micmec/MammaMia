@@ -8,6 +8,7 @@
     "events": "^1.1.1",
     "history": "^2.0.1",
     "lodash": "^4.17.4",
+    "password-validator": "^4.0.0",
     "q": "^1.5.0",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",

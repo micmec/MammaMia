@@ -1,8 +1,9 @@
 import express from 'express';
-import users from './resources/users';
+import users from './routs/users';
+import auth from './routs/auth';
 import bodyParser from 'body-parser';
 
-//TODO smart serving
+//TODO smart serving with port selection
 
 let app = express();
 
@@ -14,4 +15,5 @@ app.listen(app.get("port"), () => {
 
 app.use(bodyParser.json());
 
+app.use('/api/auth', auth); // Make a POST request to users
 app.use('/api/users', users); // Make a POST request to users

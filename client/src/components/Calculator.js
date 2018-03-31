@@ -440,7 +440,7 @@ const categories = ["carbo", "meat", "fish", "veggie", "fruit", "legumes"];
 let url = new URL(window.location.href);
 
 let name = url.searchParams.get("name");
-let bodyweight = parseInt(url.searchParams.get("bodyweight"));
+let bodyweight = parseInt(url.searchParams.get("bodyWeight"));
 let height = parseInt(url.searchParams.get("height"));
 let age = parseInt(url.searchParams.get("age"));
 let sex = url.searchParams.get("name");
@@ -572,7 +572,7 @@ class SignUp extends React.Component {
     scegli_ricetta(template, pasto, categoria) {
         let index = 0;
         let goodRecipes = [];
-        this.shuffle(recepies);
+        // this.shuffle(recepies);
         while (index < recepies.length) {
             if (recepies[index].pasto === pasto && recepies[index].categoria !== categoria) {
                 goodRecipes.push(recepies[index])

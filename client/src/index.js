@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import Calculator from './components/Calculator';
 import SignUpPage from './components/SignUpPage';
-import {BrowserRouter as Router, Route,} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
@@ -12,6 +12,7 @@ import { routerMiddleware } from 'react-router-redux'
 import {browserHistory} from 'react-router'
 import rootReducer from './rootReducer'
 import FlashMessagesList from './components/flash/FlashMessagesList'
+import LoginPage from './components/LoginPage'
 
 //TODO reinvent logic using routing
 //TODO remove HTML5up and use semantic-ui
@@ -24,6 +25,7 @@ class Main extends React.Component {
                 <FlashMessagesList/>
                 <Route exact path="/" component={App}/>
                 <Route path="/signup" component={SignUpPage}/>
+                <Route path="/login"      component={LoginPage}/>
                 <Route path="/calculator" component={Calculator}/>
             </div>
         </Router>
