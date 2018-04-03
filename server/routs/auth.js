@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
                     height: user.get('height'),
                     age: user.get('age'),
                     sex: user.get('sex')
-                }, config.jwtSecret)
+                }, config.jwtSecret);
                 res.json({token})
             } else {
                 res.status(401).json({errors: {form: 'Invalid credentials'}})

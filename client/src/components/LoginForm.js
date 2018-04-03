@@ -3,7 +3,7 @@ import TextFieldGroup from './common/TextFieldGroup'
 import validateInput from "../validations/login";
 import classnames from 'classnames';
 import {connect} from 'react-redux';
-import {login} from '../actions/login'
+import {login} from '../actions/authActions'
 
 class LoginForm extends React.Component {
 
@@ -14,7 +14,8 @@ class LoginForm extends React.Component {
             identifier: '',
             password: '',
             errors: {},
-            isLoading: false
+            isLoading: false,
+            canMove: false
         }
 
         this.onChange = this.onChange.bind(this)
@@ -23,8 +24,6 @@ class LoginForm extends React.Component {
 
     isValid() {
         const {errors, isValid} = validateInput(this.state)
-
-        console.log(isValid)
 
         if (!isValid) {
             this.setState({
@@ -37,17 +36,11 @@ class LoginForm extends React.Component {
 
     onSubmit(e) {
         e.preventDefault();
-
         if (this.isValid()) {
-            this.setState({ errors: {}, isLoading: true })
+            this.setState({ errors: {}, isLoading: true });
             this.props.login(this.state).then(
-                (res) => {
-                    const {name, bodyWeight, height, age, sex} = res.data;
-                    this.context.router.history.push(`/calculator?name=${name}&&bodyWeight=${bodyWeight}&&height=${height}&&age=${age}&&sex=${sex}`);
-                },
-                (err) => {
-                    this.setState({errors: err.response.data.errors, isLoading: false})
-                }
+                (res) => this.context.router.history.push('/'),
+                (err) => this.setState({ errors: err.response.data.errors, isLoading: false })
             )
         }
     }
@@ -93,4 +86,4 @@ LoginForm.contextTypes = {
     router: React.PropTypes.object.isRequired
 }
 
-export default connect(null, { login })(LoginForm)
+export default connect(null, {login})(LoginForm)

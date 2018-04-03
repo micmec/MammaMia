@@ -3,6 +3,8 @@ import isEmail from 'validator/lib/isEmail'
 import equals from 'validator/lib/equals'
 
 export default function validateInput(data) {
+    console.log("validating: ", data);
+
     let errors = {};
 
     if (!isEmail(data.email)) {
