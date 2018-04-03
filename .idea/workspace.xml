@@ -271,11 +271,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="javascript.nodejs.core.library.configured.version" value="9.3.0" />
     <property name="SearchEverywhereHistoryKey" value="kne&#9;FILE&#9;file:///Users/michelangelomecozzi/Desktop/Programming/MammaMia/server/knexfile.js&#10;alert-&#9;null&#9;null&#10;main&#9;FILE&#9;file:///Users/michelangelomecozzi/Desktop/Programming/MammaMia/client/src/assets/css/main.css&#10;roo&#9;FILE&#9;file:///Users/michelangelomecozzi/Desktop/Programming/MammaMia/client/src/rootReducer.js&#10;css&#9;FILE&#9;file:///Users/michelangelomecozzi/Desktop/Programming/MammaMia/client/src/assets/css/main.css&#10;border&#9;FILE&#9;file:///Users/michelangelomecozzi/Desktop/Programming/MammaMia/client/node_modules/bootstrap/scss/utilities/_borders.scss&#10;a&#9;FILE&#9;file:///Users/michelangelomecozzi/Desktop/Programming/MammaMia/client/src/components/LoginPage.js&#10;sign&#9;FILE&#9;file:///Users/michelangelomecozzi/Desktop/Programming/MammaMia/client/src/actions/signupActions.js&#10;sig&#9;FILE&#9;file:///Users/michelangelomecozzi/Desktop/Programming/MammaMia/client/src/components/SignUpPage.js&#10;Te&#9;FILE&#9;file:///Users/michelangelomecozzi/Desktop/Programming/MammaMia/client/src/components/common/TextFieldGroup.js&#10;alert&#9;FILE&#9;file:///Users/michelangelomecozzi/Desktop/Programming/MammaMia/client/src/assets/css/sweetalert.min.css&#10;fa-fa&#9;null&#9;null&#10;icon&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="9.3.0" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
@@ -317,13 +321,10 @@
       <envs />
     </configuration>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="npm.client" />
+      <list>
+        <item itemvalue="npm.client" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
