@@ -1,0 +1,22 @@
+{
+  "name": "Dindon-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "babel-node index.js",
+    "start": "npm run server"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "bluebird": "^3.5.1",
+    "body-parser": "latest",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.2.0",
+    "react-scripts": "^1.1.1",
+    "validator": "^9.4.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}

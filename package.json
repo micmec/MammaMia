@@ -1,26 +1,24 @@
 {
-  "name": "tet",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "events": "^1.1.1",
-    "express": "^4.15.2",
-    "history": "^2.0.1",
-    "lodash": "^4.17.4",
-    "q": "^1.5.0",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
-    "react-router": "^2.8.1",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.1.1",
-    "redux": "^3.7.2",
-    "sweetalert": "^2.1.0",
-    "sweetalert-react": "^0.4.11"
-  },
+  "name": "dindon",
+  "version": "1.0.0",
+  "description": "MammaMia - Never worry about your food again# MammaMia",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micmec/MammaMia.git"
+  },
+  "author": "Michelangelo Mecozzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micmec/MammaMia/issues"
+  },
+  "homepage": "https://github.com/micmec/MammaMia#readme",
+  "dependencies": {
+    "bookshelf": "^0.13.3",
+    "knex": "^0.14.4",
+    "pg": "^7.4.1"
   }
 }

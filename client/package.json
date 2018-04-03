@@ -1,0 +1,41 @@
+{
+  "name": "tet",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "classnames": "^2.2.5",
+    "events": "^1.1.1",
+    "history": "^2.0.1",
+    "lodash": "^4.17.4",
+    "password-validator": "^4.0.0",
+    "q": "^1.5.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^2.8.1",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "^1.1.1",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "shortid": "^2.2.8",
+    "sweetalert": "^2.1.0",
+    "sweetalert-react": "^0.4.11",
+    "validator": "^9.4.1"
+  },
+  "proxy": "http://localhost:5000",
+  "scripts": {
+    "client": "react-scripts start",
+    "start": "npm run client",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "concurrently": "^3.5.1"
+  }
+}
