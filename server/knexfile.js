@@ -1,52 +1,40 @@
-// Update with your config settings.
+const config = {
+    user: process.env.SQL_USER,
+    password: process.env.SQL_PASSWORD,
+    database: process.env.SQL_DATABASE
+};
+
+if (process.env.INSTANCE_CONNECTION_NAME && process.env.NODE_ENV === 'production') {
+    config.host = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`;
+}
+
 
 module.exports = {
 
   development: {
-      client: 'postgresql',
-      connection: {
-          database: 'test',
-          user:     'michelangelomecozzi',
-          password: ''
-      },
-      pool: {
-          min: 2,
-          max: 10
-      },
-      migrations: {
-          tableName: 'knex_migrations'
-      }
-  },
-
-  staging: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+        host: '35.195.117.60',
+        database: 'postgres',
+        user:     'postgres',
+        password: 'Qawwaqqaw97'
     },
     pool: {
-      min: 2,
-      max: 10
+        min: 0
     },
     migrations: {
-      tableName: 'knex_migrations'
+        tableName: 'knex_migrations'
     }
   },
 
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
+    client: 'pg',
+    connection: config,
     pool: {
-      min: 2,
-      max: 10
+        min: 0
     },
     migrations: {
-      tableName: 'knex_migrations'
+        tableName: 'knex_migrations'
     }
   }
 

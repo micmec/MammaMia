@@ -38,6 +38,7 @@ import PotatoOmelette from '../images/pictures/PotatoOmelette.jpeg'
 import CrispySalmon from '../images/pictures/CrispySalmon.jpeg'
 import SweetAlert from 'sweetalert-react'
 import '../assets/css/sweetalert.min.css'
+import jwt from 'jsonwebtoken'
 
 // TODO gentle scroll down
 // TODO build API for retrieval of info
@@ -437,17 +438,11 @@ const recepies = [
 
 const categories = ["carbo", "meat", "fish", "veggie", "fruit", "legumes"];
 
-let url = new URL(window.location.href);
-
-let name = url.searchParams.get("name");
-let bodyweight = parseInt(url.searchParams.get("bodyWeight"));
-let height = parseInt(url.searchParams.get("height"));
-let age = parseInt(url.searchParams.get("age"));
-let sex = url.searchParams.get("name");
+let name, bodyWeight, height, age, sex = {};
 
 let calories1, calories2;
 
-class SignUp extends React.Component {
+class Calculator extends React.Component {
 
 
     constructor(props) {
@@ -504,7 +499,17 @@ class SignUp extends React.Component {
     }
 
     componentWillMount() {
-        let template = this.calculateCalories(bodyweight, height, age, sex);
+        const token = localStorage.getItem('jwtToken');
+        console.log("Token ",token);
+        if (token) {
+            const decoded = jwt.decode(token);
+            name = decoded.name;
+            bodyWeight = decoded.bodyWeight;
+            height = decoded.height;
+            age = decoded.age;
+            sex = decoded.sex
+        }
+        let template = this.calculateCalories(bodyWeight, height, age, sex);
         calories1 = template[0];
         calories2 = template[1];
         if (template !== null) {
@@ -526,6 +531,7 @@ class SignUp extends React.Component {
             });
         }
     }
+
 
     makeExtra(rec, recs) {
         let scores = [];
@@ -572,7 +578,7 @@ class SignUp extends React.Component {
     scegli_ricetta(template, pasto, categoria) {
         let index = 0;
         let goodRecipes = [];
-        // this.shuffle(recepies);
+        this.shuffle(recepies);
         while (index < recepies.length) {
             if (recepies[index].pasto === pasto && recepies[index].categoria !== categoria) {
                 goodRecipes.push(recepies[index])
@@ -634,7 +640,7 @@ class SignUp extends React.Component {
         return template;
     }
 
-     shuffle(a) {
+    shuffle(a) {
         let j, x, i;
         for (i = a.length - 1; i > 0; i--) {
             j = Math.floor(Math.random() * (i + 1));
@@ -712,4 +718,4 @@ class SignUp extends React.Component {
     }
 }
 
-export default SignUp;
+export default Calculator;

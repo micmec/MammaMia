@@ -4,6 +4,7 @@ import '../assets/css/font-awesome.min.css'
 import classnames from 'classnames'
 import validateInput from '../validations/signup'
 import TextFieldGroup from './common/TextFieldGroup'
+import jwt from 'jsonwebtoken'
 
 //TODO logo as header
 //TODO Add additional SignUp details
@@ -56,17 +57,15 @@ class SignUp extends React.Component {
             this.setState({errors: {}, isLoading: true});
             this.props.userSignUpRequest(this.state).then(
                 () => {
-                    const {name, bodyWeight, height, age, sex} = this.state
                     this.props.addFlashMessage({
                         type: "success",
                         text: "You signed up successfully!"
                     });
-                    this.context.router.history.push(`/calculator?name=${name}&&bodyWeight=${bodyWeight}&&height=${height}&&age=${age}&&sex=${sex}`);
+                    window.scrollTo(0,0)
+                    this.context.router.history.push('/login');
                     this.setState({isLoading: false})
                 },
-                (err) => {
-                    this.setState({errors: err.response.data, isLoading: false})
-                }
+                (err) => this.setState({errors: err.response.data, isLoading: false})
             );
         }
     }
@@ -78,10 +77,13 @@ class SignUp extends React.Component {
             this.props.isUserExists(value).then(res => {
                     let errors = this.state.errors;
                     let invalid;
+                    console.log("Responded")
                     if (res.data.user !== null) {
+                        console.log("FOUND!")
                         errors[field] = `This ${field} is already used.`;
                         invalid = true
                     } else {
+                        console.log("NOT FOUND!")
                         errors[field] = '';
                         invalid = false
                     }
@@ -120,15 +122,24 @@ class SignUp extends React.Component {
                     <TextFieldGroup classBox={"text"} classSpan={""} field={"name"} value={this.state.name}
                                     label={"Name"} error={""} type={"text"} onChange={this.onChange}
                                     isLast={false}/>
-                    <TextFieldGroup classBox={"text"} classSpan={""} field={"bodyWeight"}
-                                    value={this.state.bodyWeight} label={"Body-Weight"} error={""} type={"text"}
+                    <TextFieldGroup classBox={classnames("text", {"text errorBox": errors.bodyWeight})}
+                                    classSpan={classnames("label", {"label errorSpan": errors.bodyWeight})}
+                                    field={"bodyWeight"}
+                                    value={this.state.bodyWeight} label={"Body-Weight"}
+                                    error={this.state.errors.bodyWeight || ""} type={"text"}
                                     isLast={false}
                                     onChange={this.onChange}/>
-                    <TextFieldGroup classBox={"text"} classSpan={""} field={"height"} value={this.state.height}
-                                    label={"Height"} error={""} type={"text"} onChange={this.onChange}
+                    <TextFieldGroup classBox={classnames("text", {"text errorBox": errors.height})}
+                                    classSpan={classnames("label", {"label errorSpan": errors.height})}
+                                    field={"height"} value={this.state.height}
+                                    label={"Height"} error={this.state.errors.height || ""} type={"text"}
+                                    onChange={this.onChange}
                                     isLast={false}/>
-                    <TextFieldGroup classBox={"text"} classSpan={""} field={"age"} value={this.state.age}
-                                    label={"Age"} error={""} type={"text"} onChange={this.onChange}
+                    <TextFieldGroup classBox={classnames("text", {"text errorBox": errors.age})}
+                                    classSpan={classnames("label", {"label errorSpan": errors.age})}
+                                    field={"age"} value={this.state.age}
+                                    label={"Age"} error={this.state.errors.age || ""} type={"text"}
+                                    onChange={this.onChange}
                                     isLast={true}/>
                     <div className="6u$ 12u$(mobile)">
                         <select value={this.state.sex} onChange={this.onChange} name={"sex"} form={"data"} required>

@@ -2,21 +2,27 @@
   "name": "Dindon-backend",
   "version": "1.0.0",
   "scripts": {
-    "server": "babel-node index.js",
-    "start": "npm run server"
+    "start": "babel-node index.js"
   },
   "dependencies": {
+    "async": "2.5.0",
+    "babel-cli": "^6.23.0",
     "bcrypt": "^1.0.3",
     "bluebird": "^3.5.1",
-    "body-parser": "latest",
+    "body-parser": "^1.18.2",
+    "bookshelf": "^0.13.3",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.2.0",
-    "react-scripts": "^1.1.1",
+    "knex": "^0.14.4",
+    "pg": "^7.4.1",
+    "prompt": "1.0.0",
+    "react-scripts": "^1.1.2",
     "validator": "^9.4.1"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "concurrently": "^3.5.0"
   }
 }

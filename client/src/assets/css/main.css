@@ -2035,6 +2035,25 @@ a:hover {
     width: 100%;
 }
 
+.topButton {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    top: 20px;
+    right: 40px;
+}
+
+.topButton:hover {
+    color: #152E33;
+}
+
+.myEx:hover {
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+}
+
 /* Button */
 
 input[type="button"],

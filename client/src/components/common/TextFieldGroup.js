@@ -1,4 +1,8 @@
 import React from 'react'
+import isNumber from 'validator/lib/isNumeric'
+
+
+let isRegularComponent;
 
 class TextFieldGroup extends React.Component {
 
