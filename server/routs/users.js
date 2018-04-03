@@ -6,6 +6,7 @@ import isEmpty from 'lodash/isEmpty'
 import bodyParser from 'body-parser'
 const Knex = require('knex');
 
+
 let router = express.Router();
 
 function validateInput(data, otherValidations) {
